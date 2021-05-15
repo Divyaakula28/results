@@ -1,0 +1,62 @@
+{% extends 'topper1.html'%}
+{% block body%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+  <form action="{% url 'passper1' %}" method="POST">
+            {% csrf_token %}
+<body>
+<div class="hii">
+{% for i in h %} 
+	<div class="radio">
+      <label><input type="radio" value="{{i}}" name="hello" checked>{{ i }}</label>
+    </div>
+
+{% endfor %}		
+{% ifequal k 'Yellow' %}
+<input type="submit" value="proceed">
+{% endifequal %} 
+</div>
+</body>
+<style type="text/css">
+.hii {
+  margin: auto;
+
+  width: 40%;
+  padding: 10px;
+  position: relative;
+  left :90px;
+  top:30px;
+
+}
+</style>
+</html>
+{% endblock %}
+<!--
+
+<div class="container">
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="optradio" checked>Option 1</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Option 2</label>
+    </div>
+    <div class="radio disabled">
+      <label><input type="radio" name="optradio" disabled>Option 3</label>
+    </div>
+  </form>
+</div>

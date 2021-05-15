@@ -1,0 +1,42 @@
+{% extends "pin.html" %}
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+</head>
+	
+	 <link rel="stylesheet" type="text/css" href="{%static 'css/pin1.css'%}">
+	 <form action="{% url 'Individual_Info' %}" method="POST">
+            {% csrf_token %}
+
+<body>
+<script type="text/javascript">
+	var subcode={{subcode |safe}};
+	var subname={{subname |safe}};
+	var grades={{grades |safe}};
+	var credits={{credits |safe}};
+	var cgpa={{cgpa |safe}};
+	var rank={{rank |safe}}
+	var coll = document.getElementsByClassName("btn btn-info");
+	var j;
+	document.write("<table class=\"center\" style=\"color: #DC143C \"><tr><th>Subject_code</th><th>Subject_Name</th><th>Grades</th><th>Credits</th>")
+	for (var i=0;i<subcode.length;i++){
+		if(grades[i]=='F'){
+			document.write("<tr class=\"content-table\" style=\"color: #DC143C\"><td >"+subcode[i]+"</td><td>"+subname[i]+"</td><td>"+grades[i]+"</td><td>"+credits[i]+"</td></tr>");}
+		else if(grades[i]=='ABSENT'){
+			document.write("<tr class=\"content-table\" style=\"color: #000000\"><td >"+subcode[i]+"</td><td>"+subname[i]+"</td><td>"+grades[i]+"</td><td>"+credits[i]+"</td></tr>");}	
+		else{	
+			document.write("<tr class=\"content-table\" style=\"color: #6495ED\"><td >"+subcode[i]+"</td><td>"+subname[i]+"</td><td>"+grades[i]+"</td><td>"+credits[i]+"</td></tr>");}
+		}
+
+	
+	document.write("<table class=\"center1\" ><tr><th style=\"color: #000000\" >CGPA: </th><th style=\"color: #DC143C\">"+cgpa+"</th>");
+	document.write("<table class=\"center2\" ><tr><th style=\"color: #000000\" >RANK: </th><th style=\"color: #DC143C\">"+rank+"</th>");
+
+</script>
+
+</body>
+{% endblock%}
+</html>
