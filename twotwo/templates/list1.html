@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
+  <title>2-2 results</title>
 </head>
    <link rel="stylesheet" type="text/css" href="{%static 'css/list.css'%}">
    <form action="{% url 'Branch_Details' %}" method="POST">
@@ -22,9 +22,9 @@
   document.write("<table id=\"MyTable\" class=\"center\" style=\"color: #DC143C \"><tr><th>PIN Number</th><th>Credits</th><th>RANK</th><th>click Here")
   for (var i=0;i<v.length;i++){
     if(v[i]==0){
-      document.write("<tr class=\"content-table\" style=\"color: #DC143C\"><td >"+k[i]+"</td><td>"+v[i]+"</td><td>0</td><td onclick=\"location.href='http://127.0.0.1:8000/Individual_Info/'\">For More</td></tr>");}  
+      document.write("<tr class=\"content-table\" style=\"color: #DC143C\"><td >"+k[i]+"</td><td>"+v[i]+"</td><td>0</td><td onclick=\"location.href='https://semresults.herokuapp.com/Individual_Info/'\">For More</td></tr>");}  
     else{ 
-      document.write("<tr class=\"content-table\" style=\"color: #6495ED\"><td >"+k[i]+"</td><td>"+v[i]+"</td><td>"+rank[i]+"</td><td><a onclick=\"location.href='http://127.0.0.1:8000/Individual_Info/'\">For More</a></td></tr>");}
+      document.write("<tr class=\"content-table\" style=\"color: #6495ED\"><td >"+k[i]+"</td><td>"+v[i]+"</td><td>"+rank[i]+"</td><td><a onclick=\"location.href='https://semresults.herokuapp.com/Individual_Info/'\">For More</a></td></tr>");}
     }
 
   const searchFun=() =>{
